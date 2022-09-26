@@ -230,7 +230,7 @@ exports.getUserMostViewedPosts = async (req, res) => {
 
     const mostViewedVideoPosts = await VidePost.find({
       postedBy: userDetails._id,
-      views: { $gt: 300 },
+      views: { $gt: 20 },
     })
       .sort({ date: "DESC" })
       .limit(30)

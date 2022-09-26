@@ -257,7 +257,7 @@ exports.getPostsBySamePostedByUser = async (req, res) => {
 
 exports.getTrendingPosts = async (req, res) => {
   try {
-    const trending_posts = await VideoPost.find({ views: { $gt: 100 } })
+    const trending_posts = await VideoPost.find({ views: { $gt: 20 } })
       .populate("postedBy", "name slug _id")
       .populate("categoryBy", "categoryName slug _id");
 
